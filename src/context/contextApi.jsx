@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
-import { fetchDataFromApi } from "../utils/api.jsx";
 
+import { fetchDataFromApi } from "../utils/api";
 export const Context = createContext();
 
 export const AppContext = (props) => {
@@ -15,25 +15,24 @@ export const AppContext = (props) => {
 
   const fetchSelectedCategoryData = (query) => {
     setLoading(true);
-    fetchDataFromApi(`search/?q=${query}`).then((res) => {
-      console.log(res);
-      //setSearchResults(res);
+    fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
+      console.log(contents);
+      setSearchResults(contents);
       setLoading(false);
     });
   };
 
   return (
     <Context.Provider
-      value={
-        (loading,
+      value={{
+        loading,
         setLoading,
         searchResults,
-        setSearchResults,
         selectedCategory,
         setSelectedCategory,
         mobileMenu,
-        setMobileMenu)
-      }
+        setMobileMenu,
+      }}
     >
       {props.children}
     </Context.Provider>
