@@ -1,0 +1,18 @@
+This is the file which will contain the details of various concepts used in the concept along with the details of the packages used wherever required.
+
+Used:
+1. React
+2. Tailwind
+3. RapidAPI - 
+    a. Youtube API.
+4. Axios
+
+Concepts:
+1. Context - Context in Reactjs lets components pass information deep down without explicitly passing props. For more visit: https://react.dev/reference/react/createContext
+2. State - 
+3. Effect -
+4. Route 
+5. Routes
+6. Link
+7. Taiwind Properties:
+    a. group-focus-within
