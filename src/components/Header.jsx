@@ -16,7 +16,7 @@ import Loader from "../shared/loader";
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const { loading, mobileMenu, setMobileMenu } = useContext(Context); //importing the context from context.jsx
+  const { loading, mobileMenu, setMobileMenu } = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -34,11 +34,12 @@ const Header = () => {
   };
 
   const { pathname } = useLocation();
-  const pageName = pathname.split("/")?.filter(Boolean)?.[0];
+  const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
 
   return (
     <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black">
       {loading && <Loader />}
+
       <div className="flex h-5 items-center">
         {pageName !== "video" && (
           <div
